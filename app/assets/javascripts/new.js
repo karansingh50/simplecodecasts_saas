@@ -16,13 +16,22 @@
 //= require turbolinks
 //= require_tree .
 
- //$(document).ready(function () {
-  //alert("haha");   
-//$("#new_contact").validate({
-//debug: true,
-//rules: {
-//"user[email]": {required: true, email: true},
-//"user[password]": {required: true, minlength: 6}
-//}
-//});
-//});
+$(document).ready(function () {
+
+$('#new_contact').validate({
+rules: {
+'contact[email]': {required: true, email: true, remote: '/check_email'},
+'contact[name]': {required: true}
+},
+
+messages: {
+    
+    'contact[email]' :{
+        remote: "ah sorry"
+    }
+}
+
+
+});
+});
+

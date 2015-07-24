@@ -5,7 +5,15 @@ Rails.application.routes.draw do
  root 'pages#home'
  get '/about' => 'pages#about'
  
+ post '/thanks' => 'pages#thanks'
+
  
+#map.resources :contacts, :collection => { :check_email => :get }
+#map.check_email "contacts/check_email", :controller => "contacts", :action => "check_email"
+#map.resources :contacts
+
+ get '/check_email' => 'contacts#check_email',  :defaults => { :format => 'json' }
+# match 'check_mail' => "contacts#check_mail"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
