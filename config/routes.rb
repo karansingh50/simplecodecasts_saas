@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
  
+  devise_for :users
  resources :contacts
- 
- root 'pages#home'
+  #get '/' => 'pages#home'
+ #root 'pages#home'
+
  get '/about' => 'pages#about'
- 
+#root :to => 'devise/sessions#new'
+
+
+#root :to => redirect("/users/sign_in")
+
+#devise_scope :user do
+ # root :to => "devise/sessions#new"
+#end
+ devise_scope :user do
+ get '/' => 'devise/sessions#new'
+ end
  post '/thanks' => 'pages#thanks'
 
  

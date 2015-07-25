@@ -35,10 +35,10 @@ def create
     end
 
   if @contact.save
-    name = params[:contact][:name]
-    email = params[:contact][:email]
-    body = params[:contact][:comments]
-    ContactMailer.contact_email(name, email, body).deliver
+    #name = params[:contact][:name]
+    #email = params[:contact][:email]
+    #body = params[:contact][:comments]
+    #ContactMailer.contact_email(name, email, body).deliver
     @flash1[:success] = 'Message sent.'
    redirect_to contact_path(:id => @contact.id) 
   else
