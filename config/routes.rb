@@ -2,7 +2,11 @@ Rails.application.routes.draw do
  
   devise_for :users
  resources :contacts
-  #get '/' => 'pages#home'
+ 
+  resources :users do
+    resource :profile
+  end
+ get '/' => 'pages#home'
  #root 'pages#home'
 
  get '/about' => 'pages#about'
@@ -12,11 +16,11 @@ Rails.application.routes.draw do
 #root :to => redirect("/users/sign_in")
 
 #devise_scope :user do
- # root :to => "devise/sessions#new"
+ # root :to =>    "devise/registrations#new" 
 #end
- devise_scope :user do
- get '/' => 'devise/sessions#new'
- end
+# devise_scope :user do
+ #get '/' => 'devise/sessions#new'
+ #end
  post '/thanks' => 'pages#thanks'
 
  

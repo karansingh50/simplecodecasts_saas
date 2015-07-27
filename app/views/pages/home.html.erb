@@ -1,6 +1,44 @@
 
+
+<% if current_user %>
+          <%= link_to "Create your dayum Profile Baby!", new_user_profile_path(current_user), class: 'btn btn-success navbar-btn', method: :get %>
+        <% end %>
+        
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+<div class="g-hangout" data-render="createhangout"></div>
+
+<script language="javascript" type="text/javascript">
+  
+    
+    function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 17; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+  var string = makeid(); 
+  
+  var string2 = "https://plus.google.com/hangouts/_/event/" + string + "?authuser=0&hl=en-GB";
+console.log(string2)
+
+
+document.write('<a href="' + string2 + '">Link text</a>');
+
+document.getElementById("link2").setAttribute("href","sdfsf");
+</script>
+
+
+
+
 <div class = "jumbotron">
     <div class = "container-fluid">
+        <h1 id"link2">dsfadfs</h1>
         <h1>Welcome</h1>
         <h2>Hi Developers!</h2>
         
